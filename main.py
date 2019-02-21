@@ -13,7 +13,7 @@ from start_car_f import start_carwindow
 from PyQt5.QtCore import QTimer
 
 #Full screen mode
-full_screen = 0
+full_screen = 1
 #Default_passcode
 my_passcode='1111'
 #timer for root menu 60 seconds
@@ -37,9 +37,12 @@ def time_handler():
         global counter
         counter -= 1
 
-        #lcdNumber root
-        root.lcdNumber.display(counter)
-        #lcdNumber start car
+        if root.isVisible():
+            #lcdNumber root
+            root.lcdNumber.display(counter)
+            #lcdNumber start car
+        elif start_car.isVisible():
+            start_car.lcdNumber.display(counter)
 
         #lcdNumber
         if counter <=0:
@@ -80,6 +83,7 @@ def back_to_main():
     passcode.close()
     fac_rec.close()
     root.close()
+    start_car.close()
 
 
     #check timers and stop them
@@ -119,6 +123,9 @@ def open_start_car():
     fac_rec.close()
     passcode.close()
     root.close()
+    #count down 60 seconds to exitting
+    timer_process()
+
     if fac_rec.timer.isActive():
         fac_rec.timer.stop()
         fac_rec.cap.release()
