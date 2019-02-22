@@ -1,6 +1,6 @@
-#Phong Nguyen
-#ECE 412, Winter 2019
-#Capstone Project: Anti-theft and Collision detection
+# Phong Nguyen
+# ECE 412, Winter 2019
+# Capstone Project: Anti-theft and Collision detection
 
 
 import sys
@@ -12,11 +12,11 @@ from fac_rec_f import fac_recwindow
 from start_car_f import start_carwindow
 from PyQt5.QtCore import QTimer
 
-#Full screen mode
+# Full screen mode
 full_screen = 1
-#Default_passcode
+# Default_passcode
 my_passcode='1111'
-#timer for root menu 60 seconds
+# timer for root menu 60 seconds
 timer_for_root=60
 
 app = QApplication(sys.argv)
@@ -28,7 +28,7 @@ timer_back2main = QTimer()
 def timer_process():
     global counter,timer_for_root
     counter=timer_for_root
-    #1 second each
+    # 1 second each
     if not timer_back2main.isActive():
         timer_back2main.start(1000)
 
@@ -38,9 +38,9 @@ def time_handler():
         counter -= 1
 
         if root.isVisible():
-            #lcdNumber root
+            # lcdNumber root
             root.lcdNumber.display(counter)
-            #lcdNumber start car
+            # lcdNumber start car
         elif start_car.isVisible():
             start_car.lcdNumber.display(counter)
 
@@ -52,10 +52,10 @@ def time_handler():
 
 
 
-#from passcode to root
+# from passcode_to_root
 def open_root():
     passcode.close()
-    #count down 60 seconds to exitting
+    # count down 60 seconds to exitting
     timer_process()
 
     if fac_rec.isVisible():
@@ -117,8 +117,8 @@ def open_fac_rec():
         fac_rec.showFullScreen()
     else:
         fac_rec.show()
-
-#===================IMPORTANT TURN ON THE CAR RIGHT HERE=====================
+#==========================================================================================================================
+#===================IMPORTANT TURN ON THE CAR RIGHT HERE==================================================================
 def open_start_car():
     fac_rec.close()
     passcode.close()
@@ -133,10 +133,11 @@ def open_start_car():
         start_car.showFullScreen()
     else:
         start_car.show()
-
-
-
+#==========================================================================================================================
+#==========================================================================================================================
 #---------------------------------------------------------------------------------------------------
+
+
 #object instantiation
 mainmenu = mainmenuwindow()
 passcode =  passcodewindow()

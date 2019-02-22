@@ -12,7 +12,7 @@ class Ui_name_a_new_user(object):
     def setupUi(self, name_a_new_user):
         name_a_new_user.setObjectName("name_a_new_user")
         name_a_new_user.resize(1186, 663)
-        name_a_new_user.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
+        name_a_new_user.setStyleSheet("background-image: url(\'a.jpg\');\n"
 "")
         self.centralwidget = QtWidgets.QWidget(name_a_new_user)
         self.centralwidget.setObjectName("centralwidget")
