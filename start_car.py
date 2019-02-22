@@ -12,8 +12,7 @@ class Ui_start_car(object):
     def setupUi(self, start_car):
         start_car.setObjectName("start_car")
         start_car.resize(1212, 765)
-        start_car.setStyleSheet(" background-image: url(\'b.jpg\');\n"
-"")
+        start_car.setStyleSheet("background-image: url(\'b.jpg\');")
         self.centralwidget = QtWidgets.QWidget(start_car)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
