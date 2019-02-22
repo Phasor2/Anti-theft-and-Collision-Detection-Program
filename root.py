@@ -12,8 +12,7 @@ class Ui_root(object):
     def setupUi(self, root):
         root.setObjectName("root")
         root.resize(1279, 826)
-        root.setStyleSheet("background-image: url(\'b.jpg\');"
-"")
+        root.setStyleSheet("background-image: url(\'b.jpg\');")
         self.centralwidget = QtWidgets.QWidget(root)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
