@@ -8,7 +8,7 @@ from PyQt5.QtCore import QTimer
 from fac_rec import Ui_fac_rec
 
 #save.txt
-save_path='/home/phong/Desktop/antitheft/save.txt'
+save_path='save.txt'
 
 #Intel Haarcascade file
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -17,16 +17,16 @@ detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 #path to dataset
-dataset_path=('/home/phong/Desktop/antitheft/dataset')
+dataset_path=('dataset/')
 
 #path to yml
-yml_path=('/home/phong/Desktop/antitheft/trainer/trainer.yml')
+yml_path=('trainer/trainer.yml')
 
 #font
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 
-confirm_face=10
+confirm_face=70
 unlock_root=0
 unlock_frame = 0
 read_yml = 0
@@ -83,14 +83,15 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
         # set timer timeout callback function
         self.timer.timeout.connect(self.viewCam)
         # if timer is stopped and read_yml is valid
-        if not self.timer.isActive() and read_yml == 1 and self.cap.isOpened():
+        #if not self.timer.isActive() and read_yml == 1 and self.cap.isOpened():
+        if not self.timer.isActive() and self.cap.isOpened():
             # start timer
             self.timer.start(10)
 
 
 
     def viewCam(self):
-        global unlock_frame
+        global unlock_frame,read_yml
         if self.timer.isActive():
             # read image in BGR format
             ret, image = self.cap.read()
@@ -104,10 +105,11 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
             for (x, y, w, h) in faces:
                 cv2.rectangle(image, (x, y), (x + w, y + h), (225, 0, 0), 2)
                 Id, conf = recognizer.predict(gray[y:y + h, x:x + w])
-                if (conf < 100):
+                if (conf < 60):
                     # increment unlock_frame
                     unlock_frame += 1
                     # get id to name according to name list
+
                     Id = name_array[Id - 1][:-1]
                     conf = "  {0}%".format(round(100 - conf))
 
@@ -120,7 +122,6 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
                         self.cap.release()
                         if not self.timer_main.isActive():
                             self.timer_main.start(20)
-
                 else:
                     Id = "Unknown"
                     conf = "  {0}%".format(round(100 - conf))

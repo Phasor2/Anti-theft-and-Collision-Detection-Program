@@ -64,12 +64,12 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
             # delete preview images
             os.remove(os.path.join(preview_path, delete_id))
 
-            change_id = len(name_array) - int(delete_id)
+            change_id = total - int(delete_id)
             # remove the upper rest of dataset
             # if deleted user id is smaller than the rest user id
             # decrement 1 to the rest user id that greater than deleted user id
             if change_id > 0:
-                for j in range(1, total):
+                for j in range(1, change_id+1):
                     temp1 = int(delete_id) + j
                     temp2 = int(delete_id) + j - 1
                     for filename in os.listdir(dataset_path):
@@ -89,9 +89,14 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
                     f.write("%s" % name)
 
 
+            #update trainer
+            if name_array:
+                # calling the trainer fuction
+                self.trainer()
+            #just remove trainer
+            else:
+                os.remove(os.path.join('trainer/','trainer.yml'))
 
-            # calling the trainer fuction
-            self.trainer()
 
         # load the remove function again
         self.remove_f()
@@ -101,7 +106,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
 
         pixmap = QPixmap('preview/'+str(current))
 
-        self.id_label.setText(name_array[current-1]+' ' + 'Id: ' + str(current)+ '/'+ str(total))
+        self.id_label.setText(name_array[current-1]+' ' + 'person : ' + str(current)+ ' out of '+ str(total))
         #load image preview
         self.preview_image.setScaledContents(True)
         self.preview_image.setPixmap(pixmap)
@@ -183,9 +188,9 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         recognizer.train(faces, np.array(Ids))
         recognizer.save(yml_path)
 
-app = QApplication(sys.argv)
-remove_a_driver=remove_a_driverwindow()
-remove_a_driver.show()
-remove_a_driver.remove_f()
-sys.exit(app.exec_())
+#app = QApplication(sys.argv)
+#remove_a_driver=remove_a_driverwindow()
+#remove_a_driver.show()
+#remove_a_driver.remove_f()
+#sys.exit(app.exec_())
 

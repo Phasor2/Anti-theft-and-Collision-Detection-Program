@@ -31,7 +31,7 @@ yml_path=('trainer/trainer.yml')
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 # Initialize amount of number to take for training
-sample_number = 5
+sample_number = 30
 counter=0
 first=0
 complete = 0

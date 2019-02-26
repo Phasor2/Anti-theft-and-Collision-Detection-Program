@@ -15,6 +15,7 @@ from name_new_user_f import name_new_userwindow
 from cap_new_user_f import cap_new_userwindow
 from remove_a_driver_f import remove_a_driverwindow
 from error_f import errorwindow
+from error_fac_rec_f import error_fac_recwindow
 from PyQt5.QtCore import QTimer
 
 
@@ -28,6 +29,9 @@ from PIL import Image
 
 #save.txt
 save_path='save.txt'
+
+#path to yml
+yml_path=('trainer/trainer.yml')
 
 # Full screen mode
 full_screen = 0
@@ -102,6 +106,7 @@ def back_to_main():
     passcode.close()
     fac_rec.close()
     root.close()
+    error_fac_rec.close()
 
 
 
@@ -130,12 +135,21 @@ def open_passcode():
 
 #from main to facial recognition
 def open_fac_rec():
-    fac_rec.camera_init()
+
     mainmenu.close()
-    if full_screen:
-        fac_rec.showFullScreen()
+
+
+    if os.path.isfile(yml_path):
+        fac_rec.camera_init()
+        if full_screen:
+            fac_rec.showFullScreen()
+        else:
+            fac_rec.show()
     else:
-        fac_rec.show()
+        #open error_fac_rec
+        open_error_fac_rec()
+
+
 #==========================================================================================================================
 #===================IMPORTANT TURN ON THE CAR RIGHT HERE==================================================================
 def open_start_car():
@@ -243,6 +257,13 @@ def open_error():
         error.show()
 
 
+def open_error_fac_rec():
+    mainmenu.close()
+    if full_screen:
+        error_fac_rec.showFullScreen()
+    else:
+        error_fac_rec.show()
+
 
 
 #object instantiation
@@ -256,6 +277,7 @@ name_new_user = name_new_userwindow()
 cap_new_user = cap_new_userwindow()
 remove_a_driver = remove_a_driverwindow()
 error = errorwindow()
+error_fac_rec = error_fac_recwindow()
 
 
 
@@ -297,5 +319,6 @@ name_new_user.benter.clicked.connect(check_error)
 remove_a_driver.back.clicked.connect(open_manage_drivers)
 
 error.back.clicked.connect(open_name_new_user)
+error_fac_rec.pushButton.clicked.connect(back_to_main)
 sys.exit(app.exec_())
 
