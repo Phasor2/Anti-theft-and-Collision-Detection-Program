@@ -105,8 +105,10 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         global current, name_array, total
 
         pixmap = QPixmap('preview/'+str(current))
-
-        self.id_label.setText(name_array[current-1]+' ' + 'person : ' + str(current)+ ' out of '+ str(total))
+        if name_array:
+            self.id_label.setText(name_array[current-1]+' ' + 'person : ' + str(current)+ ' out of '+ str(total))
+        else:
+            self.id_label.setText('Empty list')
         #load image preview
         self.preview_image.setScaledContents(True)
         self.preview_image.setPixmap(pixmap)
@@ -117,6 +119,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         global current, name_array
         if not name_array:
             self.preview_image.setText('No driver to remove !')
+            self.id_label.setText('Empty list')
         else:
             if current==1:
                 current=len(name_array)
@@ -128,6 +131,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         global  current,name_array
         if not name_array:
             self.preview_image.setText('No driver to remove !')
+            self.id_label.setText('Empty list')
         else:
             if current==len(name_array):
                 current=1
@@ -144,6 +148,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
                 name_array = my_file.readlines()
         if not name_array:
             self.preview_image.setText('No driver to remove !')
+            self.id_label.setText('Empty list')
         #start with Id = 1
         else:
             total=len(name_array)

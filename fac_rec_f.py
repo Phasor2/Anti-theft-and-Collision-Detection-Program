@@ -91,7 +91,7 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
 
 
     def viewCam(self):
-        global unlock_frame,read_yml
+        global unlock_frame,read_yml,name_array
         if self.timer.isActive():
             # read image in BGR format
             ret, image = self.cap.read()
@@ -109,8 +109,11 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
                     # increment unlock_frame
                     unlock_frame += 1
                     # get id to name according to name list
-
-                    Id = name_array[Id - 1][:-1]
+                    # Bug here Check Id before getting the name_array
+                    if Id > 0 and Id <= len(name_array):
+                        Id = name_array[Id - 1][:-1]
+                    else:
+                        Id=' '
                     conf = "  {0}%".format(round(100 - conf))
 
                     # confirm face
@@ -123,7 +126,7 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
                         if not self.timer_main.isActive():
                             self.timer_main.start(20)
                 else:
-                    Id = "Unknown"
+                    Id = " "
                     conf = "  {0}%".format(round(100 - conf))
                 cv2.putText(image, str(Id), (x, y + h), font, 1, (0, 255, 0), 3)
                 cv2.putText(image, str(conf), (x + 150, y + h - 5), font, 1, (0, 0, 255), 3)
