@@ -14,7 +14,7 @@
    <string>root</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"> background-image: url('/home/phong/Desktop/antitheft/GUI/3/b.png');
+   <string notr="true"> background-image: url('/home/phong/Desktop/antitheft/GUI/3/a.jpg');
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">

@@ -12,28 +12,29 @@ class Ui_start_car(object):
     def setupUi(self, start_car):
         start_car.setObjectName("start_car")
         start_car.resize(1212, 765)
-        start_car.setStyleSheet("background-image: url(\'a.jpg\');")
+        start_car.setStyleSheet(" background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
+"")
         self.centralwidget = QtWidgets.QWidget(start_car)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.back_to_main = QtWidgets.QPushButton(self.centralwidget)
+        self.back_to_root = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.back_to_main.sizePolicy().hasHeightForWidth())
-        self.back_to_main.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.back_to_root.sizePolicy().hasHeightForWidth())
+        self.back_to_root.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.back_to_main.setFont(font)
-        self.back_to_main.setStyleSheet("color:white;\n"
+        self.back_to_root.setFont(font)
+        self.back_to_root.setStyleSheet("color:white;\n"
 "border: 3px solid red;")
-        self.back_to_main.setObjectName("back_to_main")
-        self.horizontalLayout.addWidget(self.back_to_main)
+        self.back_to_root.setObjectName("back_to_root")
+        self.horizontalLayout.addWidget(self.back_to_root)
         self.lcdNumber = QtWidgets.QLCDNumber(self.centralwidget)
         self.lcdNumber.setStyleSheet("color:blue;\n"
 "border: 3px solid red;")
@@ -65,7 +66,7 @@ class Ui_start_car(object):
     def retranslateUi(self, start_car):
         _translate = QtCore.QCoreApplication.translate
         start_car.setWindowTitle(_translate("start_car", "start_car"))
-        self.back_to_main.setText(_translate("start_car", "Back to MainMenu"))
+        self.back_to_root.setText(_translate("start_car", "Back to RootMenu"))
         self.label.setText(_translate("start_car", "Start the car now !"))
 
 

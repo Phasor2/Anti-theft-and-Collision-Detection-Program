@@ -13,7 +13,7 @@ class Ui_fac_rec(object):
     def setupUi(self, fac_rec):
         fac_rec.setObjectName("fac_rec")
         fac_rec.resize(1289, 793)
-        fac_rec.setStyleSheet(" background-image: url(\'a.jpg\');")
+        fac_rec.setStyleSheet(" background-image: url(\'/home/phong/Desktop/antitheft/GUI/2/a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(fac_rec)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

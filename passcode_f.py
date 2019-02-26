@@ -1,5 +1,7 @@
 from PyQt5 import QtWidgets
 from passcode import Ui_passcode
+from PyQt5.QtWidgets import QApplication
+import sys
 
 
 class passcodewindow(QtWidgets.QMainWindow,Ui_passcode):
@@ -29,5 +31,9 @@ class passcodewindow(QtWidgets.QMainWindow,Ui_passcode):
 
         self.back_button.clicked.connect(self.backspacecode)
 
+#app = QApplication(sys.argv)
+#passcode=passcodewindow()
+#passcode.show()
 
+#sys.exit(app.exec_())
 

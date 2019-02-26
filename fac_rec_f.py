@@ -1,15 +1,17 @@
 import os.path
-import cv2,os
+import cv2
+import os
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QImage
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QTimer
+from fac_rec import Ui_fac_rec
 
 #save.txt
 save_path='/home/phong/Desktop/antitheft/save.txt'
 
 #Intel Haarcascade file
-detector=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 #for trainning xml file
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -32,20 +34,20 @@ name_array = []
 
 
 # import Opencv module
-from fac_rec import Ui_fac_rec
+
 
 
 class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # create a timer
         self.timer = QTimer()
 
     # ================================Fac_Rec==================================
     def camera_init(self):
         global read_yml, name_array, unlock_root, confirm_face, unlock_frame
         self.cap = cv2.VideoCapture(0)
-        # create a timer
 
 
 
