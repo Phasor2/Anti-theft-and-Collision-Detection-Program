@@ -12,7 +12,7 @@ class Ui_cap_new_user(object):
     def setupUi(self, cap_new_user):
         cap_new_user.setObjectName("cap_new_user")
         cap_new_user.resize(1177, 761)
-        cap_new_user.setStyleSheet(" background-image: url(\'/home/phong/Desktop/antitheft/GUI/2/a.jpg\');")
+        cap_new_user.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(cap_new_user)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)

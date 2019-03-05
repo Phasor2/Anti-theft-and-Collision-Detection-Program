@@ -12,8 +12,7 @@ class Ui_error(object):
     def setupUi(self, error):
         error.setObjectName("error")
         error.resize(1095, 686)
-        error.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        error.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(error)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

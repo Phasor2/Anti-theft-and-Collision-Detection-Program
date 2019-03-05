@@ -15,8 +15,7 @@ class Ui_manage_drivers(object):
         font = QtGui.QFont()
         font.setPointSize(48)
         manage_drivers.setFont(font)
-        manage_drivers.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        manage_drivers.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(manage_drivers)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

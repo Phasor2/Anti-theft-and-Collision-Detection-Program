@@ -28,7 +28,7 @@ dataset_path=('dataset/')
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 
-confirm_face=20
+confirm_face=10
 unlock_root=0
 unlock_frame = 0
 read_yml = 0
@@ -57,34 +57,9 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
             data = pickle.loads(open(encoding, "rb").read())
 
 
-
-            # =============================================================================================================
-
             # how many frame would it take to unclock the car
             unlock_frame = 0
-            # condition start dash cam if exist yml file
-            read_yml = 0
-            # Array to store the name
-            name_array = []
-            # unlock_root condition to go to root
-            unlock_root = 0
-            # open save.txt
-            if os.path.isfile(save_path):
-                with open(save_path, 'r+') as my_file:
-                    name_array = my_file.readlines()
-            # if name_array is not empty
-            if name_array:
-                # Read trainer.yml
-                if os.path.isfile(yml_path):
-                    # read the trainer.yml file
-                    recognizer.read(yml_path)
-                    read_yml = 1
-                else:
-                    # GUI
-                    print('Error yml file')
-            else:
-                print('Error name_array is empty')
-            # ==============================================================================================================
+
 
             # set timer timeout callback function
             self.timer.timeout.connect(self.viewCam)
@@ -171,7 +146,8 @@ class fac_recwindow(QtWidgets.QMainWindow,Ui_fac_rec):
             for ((top, right, bottom, left), name) in zip(boxes, names):
 
                 #threshold for how far to detect
-                if right > 430 and bottom >400 :
+                #if right > 430 and bottom >400 :
+                if right > 400 and bottom >390 :
                     #print(right,bottom)
                     # draw the predicted face name on the image
                     cv2.rectangle(frame, (left, top), (right, bottom),

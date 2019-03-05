@@ -1,6 +1,7 @@
 # Phong Nguyen
 # ECE 412, Winter 2019
 # Capstone Project: Anti-theft and Collision detection
+# 4/3/2019
 
 import sys
 from PyQt5.QtWidgets import QApplication
@@ -17,7 +18,7 @@ from trainer_f import trainerwindow
 from error_f import errorwindow
 from error_fac_rec_f import error_fac_recwindow
 from PyQt5.QtCore import QTimer
-
+import subprocess
 
 import os.path
 import os
@@ -30,7 +31,7 @@ from PIL import Image
 dataset='dataset/'
 
 # Full screen mode
-full_screen = 0
+full_screen = 1
 # Default_passcode
 my_passcode='1111'
 # timer for root menu 60 seconds
@@ -269,6 +270,10 @@ def open_trainer():
         trainer.start()
     else:
         open_root()
+
+#Load the camera setting
+subprocess.run(["uvcdynctrl","-L","cam.gpf1"])
+
 
 #object instantiation
 mainmenu = mainmenuwindow()

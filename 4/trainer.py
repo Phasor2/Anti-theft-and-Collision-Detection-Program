@@ -12,8 +12,7 @@ class Ui_trainer(object):
     def setupUi(self, trainer):
         trainer.setObjectName("trainer")
         trainer.resize(1098, 699)
-        trainer.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        trainer.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(trainer)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

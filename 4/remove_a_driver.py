@@ -15,8 +15,7 @@ class Ui_remove_a_driver(object):
         font = QtGui.QFont()
         font.setFamily("wasy10")
         remove_a_driver.setFont(font)
-        remove_a_driver.setStyleSheet(" background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        remove_a_driver.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(remove_a_driver)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
