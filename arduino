@@ -1,0 +1,38 @@
+void setup() {
+  pinMode(13, OUTPUT);    // RELAY
+  pinMode(12, OUTPUT);    // MUX
+}
+
+void loop() {
+  //usb connect to rasp state
+  digitalWrite(13, LOW); //Relay 
+  digitalWrite(12, LOW); //MUX
+  delay(15000);
+
+  //recording state
+  digitalWrite(13, HIGH); // Switch relay to turn off camera really quick
+  digitalWrite(12, HIGH);  // switch the MUX to 
+  delay(500);            // waits for half a second
+  	//then turn on the camera for recording 
+ 
+  digitalWrite(13, LOW); // switch relay to turn on camera
+
+
+  //10 second recording
+  delay(10000);
+
+  //saving footage
+  digitalWrite(13, LOW); // Switch relay to turn off camera
+  digitalWrite(12, LOW); // Switch mux to LOW for connecting 
+  delay(2000);
+
+
+  //usb connect to rasp state
+  digitalWrite(13, LOW); //Relay 
+  digitalWrite(12, LOW); //MUX
+  delay(10000);
+  
+  
+  
+
+}
