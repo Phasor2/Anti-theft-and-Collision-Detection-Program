@@ -12,8 +12,7 @@ class Ui_error_fac_rec(object):
     def setupUi(self, error_fac_rec):
         error_fac_rec.setObjectName("error_fac_rec")
         error_fac_rec.resize(1190, 757)
-        error_fac_rec.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        error_fac_rec.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(error_fac_rec)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

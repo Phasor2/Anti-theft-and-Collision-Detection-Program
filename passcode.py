@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'passcode.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_passcode(object):
     def setupUi(self, passcode):
         passcode.setObjectName("passcode")
-        passcode.resize(1429, 951)
+        passcode.resize(1344, 908)
         passcode.setStyleSheet("background-image: url(\'a.jpg\');\n"
 "")
         self.centralwidget = QtWidgets.QWidget(passcode)
@@ -36,7 +36,7 @@ class Ui_passcode(object):
         self.backtomainmenu_button.setObjectName("backtomainmenu_button")
         self.verticalLayout.addWidget(self.backtomainmenu_button)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
@@ -51,14 +51,21 @@ class Ui_passcode(object):
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
         self.lineEdit.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(72)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.lineEdit.setFont(font)
         self.lineEdit.setAutoFillBackground(False)
         self.lineEdit.setStyleSheet("color: Black;\n"
-"font: 75 220pt \"Ubuntu\";")
+"font: 75 72pt \"Ubuntu\";")
         self.lineEdit.setObjectName("lineEdit")
         self.verticalLayout.addWidget(self.lineEdit)
         self.gridLayout = QtWidgets.QGridLayout()
@@ -245,8 +252,8 @@ class Ui_passcode(object):
         self.gridLayout.addWidget(self.enter_button, 2, 3, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         self.verticalLayout.setStretch(0, 2)
-        self.verticalLayout.setStretch(1, 7)
-        self.verticalLayout.setStretch(2, 7)
+        self.verticalLayout.setStretch(1, 1)
+        self.verticalLayout.setStretch(2, 3)
         self.verticalLayout.setStretch(3, 7)
         self.horizontalLayout.addLayout(self.verticalLayout)
         passcode.setCentralWidget(self.centralwidget)

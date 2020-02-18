@@ -2,17 +2,18 @@
 
 # Form implementation generated from reading ui file 'root.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_root(object):
     def setupUi(self, root):
         root.setObjectName("root")
-        root.resize(1279, 826)
-        root.setStyleSheet(" background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
+        root.resize(1078, 693)
+        root.setStyleSheet(" background-image: url(\'a.jpg\');\n"
 "")
         self.centralwidget = QtWidgets.QWidget(root)
         self.centralwidget.setObjectName("centralwidget")
@@ -61,6 +62,8 @@ class Ui_root(object):
         self.verticalLayout.addWidget(self.label)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.start_car_button = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -75,9 +78,27 @@ class Ui_root(object):
         self.start_car_button.setStyleSheet("color:white;\n"
 "border: 3px solid red;")
         self.start_car_button.setObjectName("start_car_button")
-        self.horizontalLayout.addWidget(self.start_car_button)
+        self.verticalLayout_5.addWidget(self.start_car_button)
+        self.security_button = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.security_button.sizePolicy().hasHeightForWidth())
+        self.security_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.security_button.setFont(font)
+        self.security_button.setStyleSheet("color:white;\n"
+"border: 3px solid red;")
+        self.security_button.setObjectName("security_button")
+        self.verticalLayout_5.addWidget(self.security_button)
+        self.horizontalLayout.addLayout(self.verticalLayout_5)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.manage_drivers_button = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.manage_drivers_button.sizePolicy().hasHeightForWidth())
@@ -90,9 +111,27 @@ class Ui_root(object):
         self.manage_drivers_button.setStyleSheet("color:white;\n"
 "border: 3px solid red;")
         self.manage_drivers_button.setObjectName("manage_drivers_button")
-        self.horizontalLayout.addWidget(self.manage_drivers_button)
+        self.verticalLayout_4.addWidget(self.manage_drivers_button)
+        self.camera_button = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.camera_button.sizePolicy().hasHeightForWidth())
+        self.camera_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.camera_button.setFont(font)
+        self.camera_button.setStyleSheet("color:white;\n"
+"border: 3px solid red;")
+        self.camera_button.setObjectName("camera_button")
+        self.verticalLayout_4.addWidget(self.camera_button)
+        self.horizontalLayout.addLayout(self.verticalLayout_4)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.review_footage_button = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.review_footage_button.sizePolicy().hasHeightForWidth())
@@ -105,7 +144,23 @@ class Ui_root(object):
         self.review_footage_button.setStyleSheet("color:white;\n"
 "border: 3px solid red;")
         self.review_footage_button.setObjectName("review_footage_button")
-        self.horizontalLayout.addWidget(self.review_footage_button)
+        self.verticalLayout_3.addWidget(self.review_footage_button)
+        self.speech_button = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.speech_button.sizePolicy().hasHeightForWidth())
+        self.speech_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.speech_button.setFont(font)
+        self.speech_button.setStyleSheet("color:white;\n"
+"border: 3px solid red;")
+        self.speech_button.setObjectName("speech_button")
+        self.verticalLayout_3.addWidget(self.speech_button)
+        self.horizontalLayout.addLayout(self.verticalLayout_3)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout.setStretch(1, 6)
@@ -122,8 +177,13 @@ class Ui_root(object):
         self.backtomainmenu_button2.setText(_translate("root", "Back to MainMenu"))
         self.label.setText(_translate("root", "ROOT ADMIN MENU"))
         self.start_car_button.setText(_translate("root", "Start Car"))
+        self.security_button.setText(_translate("root", "Security"))
         self.manage_drivers_button.setText(_translate("root", "Manage Drivers"))
+        self.camera_button.setText(_translate("root", "Camera:"))
         self.review_footage_button.setText(_translate("root", "Review Footage"))
+        self.speech_button.setText(_translate("root", "Speech:"))
+
+
 
 
 if __name__ == "__main__":
@@ -134,4 +194,3 @@ if __name__ == "__main__":
     ui.setupUi(root)
     root.show()
     sys.exit(app.exec_())
-

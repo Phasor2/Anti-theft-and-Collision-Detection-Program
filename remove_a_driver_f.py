@@ -90,11 +90,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
 
 
             #update trainer
-            if name_array:
-                # calling the trainer fuction
-                self.trainer()
-            #just remove trainer
-            else:
+            if not name_array:
                 os.remove(os.path.join('trainer/','trainer.yml'))
 
 
@@ -108,7 +104,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         if name_array:
             self.id_label.setText(name_array[current-1]+' ' + 'person : ' + str(current)+ ' out of '+ str(total))
         else:
-            self.id_label.setText('Empty list')
+            self.id_label.setText(' ')
         #load image preview
         self.preview_image.setScaledContents(True)
         self.preview_image.setPixmap(pixmap)
@@ -119,7 +115,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
         global current, name_array
         if not name_array:
             self.preview_image.setText('No driver to remove !')
-            self.id_label.setText('Empty list')
+            self.id_label.setText(' ')
         else:
             if current==1:
                 current=len(name_array)
@@ -128,10 +124,10 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
             self.update_info()
 
     def go_right(self):
-        global  current,name_array
+        global current,name_array
         if not name_array:
             self.preview_image.setText('No driver to remove !')
-            self.id_label.setText('Empty list')
+            self.id_label.setText(' ')
         else:
             if current==len(name_array):
                 current=1
@@ -148,7 +144,7 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
                 name_array = my_file.readlines()
         if not name_array:
             self.preview_image.setText('No driver to remove !')
-            self.id_label.setText('Empty list')
+            self.id_label.setText(' ')
         #start with Id = 1
         else:
             total=len(name_array)
@@ -157,45 +153,10 @@ class remove_a_driverwindow(QtWidgets.QMainWindow,Ui_remove_a_driver):
 
         # Trainer produce trainer.yml for exam_face
 
-    def trainer(self):
-        global first, counter
-
-        def trainer_xml(path):
-            # get the path of all the files in the folder
-            imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
-            # create empth face list
-            faceSamples = []
-            # create empty ID list
-            Ids = []
-            # now looping through all the image paths and loading the Ids and the images
-            for imagePath in imagePaths:
-
-                # Updates in Code
-                # ignore if the file does not have jpg extension :
-                if (os.path.split(imagePath)[-1].split(".")[-1] != 'jpg'):
-                    continue
-
-                # loading the image and converting it to gray scale
-                pilImage = Image.open(imagePath).convert('L')
-                # Now we are converting the PIL image into numpy array
-                imageNp = np.array(pilImage, 'uint8')
-                # getting the Id from the image
-                Id = int(os.path.split(imagePath)[-1].split(".")[1])
-                # extract the face from the training image sample
-                faces = detector.detectMultiScale(imageNp)
-                # If a face is there then append that in the list as well as Id of it
-                for (x, y, w, h) in faces:
-                    faceSamples.append(imageNp[y:y + h, x:x + w])
-                    Ids.append(Id)
-            return faceSamples, Ids
-
-        faces, Ids = trainer_xml(dataset_path)
-        recognizer.train(faces, np.array(Ids))
-        recognizer.save(yml_path)
-
-#app = QApplication(sys.argv)
-#remove_a_driver=remove_a_driverwindow()
-#remove_a_driver.show()
-#remove_a_driver.remove_f()
-#sys.exit(app.exec_())
-
+#
+# app = QApplication(sys.argv)
+# remove_a_driver=remove_a_driverwindow()
+# remove_a_driver.show()
+# remove_a_driver.remove_f()
+# sys.exit(app.exec_())
+#

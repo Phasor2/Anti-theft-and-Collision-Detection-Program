@@ -12,8 +12,7 @@ class Ui_name_new_user(object):
     def setupUi(self, name_new_user):
         name_new_user.setObjectName("name_new_user")
         name_new_user.resize(1186, 706)
-        name_new_user.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
-"")
+        name_new_user.setStyleSheet("background-image: url(\'a.jpg\');")
         self.centralwidget = QtWidgets.QWidget(name_new_user)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -697,7 +696,7 @@ class Ui_name_new_user(object):
         _translate = QtCore.QCoreApplication.translate
         name_new_user.setWindowTitle(_translate("name_new_user", "name_new_user"))
         self.backtomanagedrivers_button.setText(_translate("name_new_user", "Back to Mange Drivers"))
-        self.label.setText(_translate("name_new_user", "Add a New User\'s Name"))
+        self.label.setText(_translate("name_new_user", "Add a New Driver\'s Name"))
         self.b1.setText(_translate("name_new_user", "1"))
         self.b2.setText(_translate("name_new_user", "2"))
         self.b3.setText(_translate("name_new_user", "3"))

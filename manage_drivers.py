@@ -2,11 +2,12 @@
 
 # Form implementation generated from reading ui file 'manage_drivers.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_manage_drivers(object):
     def setupUi(self, manage_drivers):
@@ -15,7 +16,7 @@ class Ui_manage_drivers(object):
         font = QtGui.QFont()
         font.setPointSize(48)
         manage_drivers.setFont(font)
-        manage_drivers.setStyleSheet("background-image: url(\'/home/phong/Desktop/antitheft/GUI/3/a.jpg\');\n"
+        manage_drivers.setStyleSheet("background-image: url(\'a.jpg\');\n"
 "")
         self.centralwidget = QtWidgets.QWidget(manage_drivers)
         self.centralwidget.setObjectName("centralwidget")
@@ -84,6 +85,21 @@ class Ui_manage_drivers(object):
 "border: 3px solid red;")
         self.remove_driver.setObjectName("remove_driver")
         self.horizontalLayout.addWidget(self.remove_driver)
+        self.remove_all = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.remove_all.sizePolicy().hasHeightForWidth())
+        self.remove_all.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.remove_all.setFont(font)
+        self.remove_all.setStyleSheet("color: white;\n"
+"border: 3px solid red;")
+        self.remove_all.setObjectName("remove_all")
+        self.horizontalLayout.addWidget(self.remove_all)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout.setStretch(0, 2)
         self.verticalLayout.setStretch(2, 12)
@@ -99,6 +115,9 @@ class Ui_manage_drivers(object):
         self.label.setText(_translate("manage_drivers", "MANAGE DRIVERS"))
         self.add_driver.setText(_translate("manage_drivers", "Add a New Driver"))
         self.remove_driver.setText(_translate("manage_drivers", "Remove a Driver"))
+        self.remove_all.setText(_translate("manage_drivers", "Remove All Drivers"))
+
+
 
 
 if __name__ == "__main__":
@@ -109,4 +128,3 @@ if __name__ == "__main__":
     ui.setupUi(manage_drivers)
     manage_drivers.show()
     sys.exit(app.exec_())
-
